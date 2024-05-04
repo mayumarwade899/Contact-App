@@ -1,18 +1,25 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 
 const ContactCard = (props) => {
   const { id, name, email } = props.contact;
   return (
     <div className="item">
-    <i class="user icon"></i>
+      <i class="user icon"></i>
       <div className="content">
         <div className="header">{name}</div>
         <div>{email}</div>
       </div>
-      <div style={{display:"flex", justifyContent:"end"}}>
+      <div style={{ display: "flex", justifyContent: "end" }}>
         <i
           className="trash alternate outline icon"
-          style={{ color: "red", margin: "7px", width:"100px", height:"30px" }}
+          style={{
+            color: "red",
+            margin: "7px",
+            width: "100px",
+            height: "30px",
+          }}
+          onClick={() => props.clickHandler(id)}
         ></i>
       </div>
     </div>
